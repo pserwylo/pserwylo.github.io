@@ -1,0 +1,83 @@
+site: docs
+title: Peter Serwylo
+description: >-
+  a blog
+googlewebfonts: Fira+Code:wght@400;500;700
+lang: en-US
+# timezone: Rome
+data-theme: dark # default theme "dark" | "light"
+
+author:
+  name: pserwylo
+  bio: software developer, free software enthusiast
+  username: pserwylo
+  github: pserwylo
+  # twitter: P0Wex # twitter username
+  email: peter@serwylo.com # email adress
+
+# URL settings
+url: "https://pserwylo.github.io/"
+baseurl: ""
+permalink: "https://pserwylo.github.io/"
+permalink: pretty 
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - .jekyll-cache
+  - .obsidian
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - CONTRIBUTING.md
+  - vendor
+  
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-relative-links
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:slug
+  
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+relative_links:
+  enabled:     true
+  collections: false
+
+
