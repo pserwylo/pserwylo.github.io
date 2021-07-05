@@ -14,6 +14,7 @@ var redirects = {
   '?p=191': '/2013/08/12/make-your-writing-beautiful',
   '?p=115': '/2012/01/16/linux-conf-2012-finding-vulnerabilities-in-php-code',
   '?p=99': '/2011/11/21/osdc-2011-wii-homebrew-running-and-writing-software-for-the-wii',
+  '?p=74': '/2011/08/01/phd-confirmation-seminar',
 };
 
 (function() {
