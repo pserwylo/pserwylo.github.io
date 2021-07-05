@@ -1,0 +1,2442 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Free(ish) MAME cabinets</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="/usr/lib/python2.7/site-packages/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="themes/osdc/css/screen.css">
+    
+    
+      
+      <link rel="stylesheet" href="styles.css">
+      
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="themes/osdc/js/slides.js"></script>
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Free(ish) MAME cabinets</h1></header>
+            
+            
+            <section><p>By Peter Serwylo</p>
+<p>http://peter.serwylo.com</p>
+<p>https://github.com/pserwylo</p>
+<div style="float: right; width: 375px; margin-top: -100px">
+    <div style="width: 100%; text-align: center; margin-bottom: 1em; font-size: 1.3em">(Not my cabinet &darr;)</div>
+    <img alt="Mame cabinet" src="images/mame-cabinet-upright.jpg" style="width: 100%" />
+</div></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              1/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Recycling old goods</h1></header>
+            
+            
+            <section><ul>
+<li>Matt Evans: <a href="http://conf.linux.org.au/schedule/150/view_talk">Hack everything: re-purposing everyday devices</a></li>
+<li>The prevention of rubbish</li>
+<li>The fun of tinkering with "rubbish"</li>
+<li>Getting cools stuff cheaply</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Who else went to LCA2012 in Ballarat?</li>
+<li>Did any of you see Matt Evans talk on Repurposing old goods?</li>
+<li>Rob used to pay us 20c per plank we de-nailed, because he didnt want to throw away good timber.</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              2/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Why?</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              3/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Why?</h1></header>
+            
+            
+            <section><h2>42'' LCD TV dies</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              4/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Why?</h1></header>
+            
+            
+            <section><h2>42'' LCD TV dies</h2>
+<h2>CRT brought in as replacement (but doesn't play tennis channel)</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              5/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Why?</h1></header>
+            
+            
+            <section><h2>42'' LCD TV dies</h2>
+<h2>CRT brought in as replacement (but doesn't play tennis channel)</h2>
+<h2>CRT #2 brought in as replacement (but too fuzzy to watch cricket)</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              6/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Why?</h1></header>
+            
+            
+            <section><h2>42'' LCD TV dies</h2>
+<h2>CRT brought in as replacement (but doesn't play tennis channel)</h2>
+<h2>CRT #2 brought in as replacement (but too fuzzy to watch cricket)</h2>
+<h2>CRT #3 brought in as replacement (smaller than #1 &amp; #2, but clear)</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              7/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+            <section><p><img class="full" style="height: 600px" src="images/tvs.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              8/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Mission:<br />Prevent TVs ending up <br />at the rubbish tip</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              9/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+            <section><p><img alt="Hard rubbish" src="images/hard-rubbish.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              10/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Solution:<br />MAME Cabinet!</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              11/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+            <section><p><img alt="Broken eeePC" src="images/broken-eeepc.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              12/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Criteria:<br />Use as much "rubbish" as possible</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              13/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Choice 1: Style</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              14/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Traditional arcade cabinet</h1></header>
+            
+            
+            <section><p><img alt="Mame cabinet" src="images/mame-cabinet-upright.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              15/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Cocktail table</h1></header>
+            
+            
+            <section><p><a href="http://dannygalaga.com/images/DSC00531small.JPG"><img alt="Cocktail table" style="margin: auto; width: 700px;" src="images/cocktail-cabinet.jpg" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              16/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Countless others...</h1></header>
+            
+            
+            <section><ul>
+<li>Tabletop arcades</li>
+<li>Mini cabinets</li>
+<li>Arcade that folds out from table</li>
+<li>Cabinets that house a console and its game cartriges</li>
+<li>etc...</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              17/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>My Choice:<br />Cocktail table</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <p>Always wanted one of these</p>
+<p>and I think they are more practical than most arcade setups.</p>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              18/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Choice 2: Controllers</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              19/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Arcade cabinet controls</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              20/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Joystics and buttons</h1></header>
+            
+            
+            <section><p><a href="http://cosmicjive.net/arcade/super/control_panel.shtml"><img alt="Arcade cabinet controls" src="images/arcade-controls-1a.jpg" /></a></p>
+<p><a href="http://cosmicjive.net/arcade/super/control_panel.shtml"><img alt="Arcade cabinet controls" src="images/arcade-controls-1b.gif" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              21/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Three way rotating control panel</h1></header>
+            
+            
+            <section><p><a href="http://cosmicjive.net/arcade/super/control_panel.shtml"><img alt="Arcade cabinet controls rotating" src="images/arcade-controls-rotate.gif" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              22/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Seven way, dual rotating control panel</h1></header>
+            
+            
+            <section><p><a href="http://rototron.info/"><img alt="Arcade cabinet controls rotating x 7" src="images/arcade-controls-rotate-x7.gif" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              23/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Cocktail table controls</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              24/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>First thought</h1></header>
+            
+            
+            <section><p><a href="http://dannygalaga.com/images/DSC00531small.JPG"><img alt="Cocktail table" style="margin: auto; width: 700px;" src="images/cocktail-cabinet.jpg" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              25/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Standard setup</h1></header>
+            
+            
+            <section><p><a href="http://hackaday.com/2009/09/09/in-depth-mame-cocktail-cabinet-build/"><img alt="Cocktail table" style="width: 800px;" src="images/cocktail-cabinet-4xcontrols.jpg" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              26/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Pullout draws</h1></header>
+            
+            
+            <section><p><a href="http://www.ikeahackers.net/2012/08/diy-arcade-machine-coffee-table.html"><img alt="Subtle table" src="images/subtle-table-1.jpg" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              27/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Pullout draws</h1></header>
+            
+            
+            <section><p><a href="http://www.ikeahackers.net/2012/08/diy-arcade-machine-coffee-table.html"><img alt="Subtle table" src="images/subtle-table-2.jpg" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              28/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>My Choice:<br />Mobile phone via wireless<br />(i.e. None of the above)</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <p>I'm not bit on electronics (yet).</p>
+<p>I was trying to do this on the cheap, buttons/joysticks cost money.</p>
+<p>I'm a programmer.</p>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              29/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Choice 3: Software stack</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              30/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>For a hacker community...<br />...massive Windows users</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              31/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Preconfigured OS</h1></header>
+            
+            
+            <section><h2>AdvanceCD</h2>
+<p><a href="http://advancemame.sourceforge.net/cd-readme.html">http://advancemame.sourceforge.net/cd-readme.html</a></p>
+<ul>
+<li>LiveUSB/CD</li>
+<li>Emulator frontend</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              32/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Clean install + custom configuration</h1></header>
+            
+            
+            <section><h2>Fast boot times</h2>
+<h2>Auto login</h2>
+<h2>Auto start emulator/launcher</h2>
+<h2>Auto start wifi + wireless controller server</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              33/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>My Choice:<br />Arch Linux + IceWM<br />==<br />5 second boot time</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              34/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Choice 3: Games!</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              35/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Emulators</h1></header>
+            
+            
+            <section><h2>MAME</h2>
+<h2>Atari</h2>
+<h2>(S)NES</h2>
+<h2>etc...</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              36/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Legality of emulating games</h1></header>
+            
+            
+            <section><div class="quote">"Um... I think that if you own the physical game, it's okay to emulate it on different hardware."</div>
+
+<p>Source: People on the internet who state IANAL</p>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <p>Compare to homebrew talk last year.</p>
+<p>Not as black and white as homebrew, which seems perfectly fine.</p>
+<p>MAME devs are very concerned about this.</p>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              37/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+            <section><p><img class="full" alt="Arcade PCBs" src="images/arcade-pcbs.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              38/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>My Choice:<br />Atari 2600<br />(Then others later on)</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              39/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>The end result...</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              40/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Using this table...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Hard rubbish table" src="images/plain-table.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              41/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>...and this perspex...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Hard rubbish perspex" src="images/table-perspex.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              42/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>...and these offcuts of timber...</h1></header>
+            
+            
+            <section><div class="quote">(Note to self, "next time remember to take photo of timber before leaving for conference...")</div></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              43/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>...to attach this eeePC...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Broken eeePC" src="images/broken-eeepc.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              44/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>I built this... cat?</h1></header>
+            
+            
+            <section><p><img class="full" alt="Finished product" src="images/product-1.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              45/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>I built this... table...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Finished product" src="images/product-2.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              46/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>I built this table...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Finished product" src="images/product-3.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              47/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>I built this table...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Finished product" src="images/product-4.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              48/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>I built this table...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Finished product" src="images/product-5.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              49/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>...which connects...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Finished product" src="images/product-6.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              50/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>...to this...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Android client" src="images/android-connect.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              51/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>..which launches this...</h1></header>
+            
+            
+            <section><p><img class="full" alt="Finished product" src="images/product-7.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              52/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Future goals</h1></header>
+            
+            
+            <section><ul>
+<li>Build another</li>
+<li>Actually use CRT TV</li>
+<li>RaspberryPI (Has composite analog output)</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              53/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Other uses for old CRT TVs</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              54/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+            <section><p><a href="http://www.apartmenttherapy.com/how-to-make-an-aquarium-out-of-76505"><img class="full" alt="Acquarium" src="images/aquarium.jpg" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              55/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+            <section><p><a href="http://blog.makezine.com/2008/01/14/old-tv-becomes-a-bar"><img class="full" alt="Surprise!" src="images/mini-bar-1.jpg" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              56/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+            <section><p><a href="http://blog.makezine.com/2008/01/14/old-tv-becomes-a-bar"><img class="full" alt="Surprise!" src="images/mini-bar-2.jpg" /></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              57/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Conclusion</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <p>I'll never be able to repurpose all of these TVs, but you can help</p>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              58/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Resources</h1></header>
+            
+            
+            <section><h2>Wireless controller client/server</h2>
+<p><a href="https://github.com/pserwylo/mame-controller">https://github.com/pserwylo/mame-controller</a>
+<br />
+<br /></p>
+<h2>Tutorial on building a MAME cabinet (one of many)</h2>
+<p><a href="http://www.maximumpc.com/article/features/how_build_kickass_mame_arcade_cabinet_old_pc">http://www.maximumpc.com/article/features/<br/>how_build_kickass_mame_arcade_cabinet_old_pc</a>
+<br />
+<br /></p>
+<h2>Completed cabinets (Hall of fame)</h2>
+<p><a href="http://arcadecontrols.com/arcade_examples.php#halloffame">http://arcadecontrols.com/arcade_examples.php#halloffame</a>
+<br />
+<br /></p>
+<h2>What <em>not</em> to do</h2>
+<p><a href="http://bit.ly/1VyeSE">http://bit.ly/1VyeSE (language warning)</a>
+<br />
+<br /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="https://github.com/pserwylo/talks-osdc-2012/">https://github.com/pserwylo/talks-osdc-2012/</a>
+			  <!--Source: <a href="talk.md">talk.md</a>-->
+            </aside>
+            
+            <aside class="page_number">
+              59/59
+			</aside>
+			<div>
+			</div>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Free(ish) MAME cabinets</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Recycling old goods</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Why?</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Why?</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Why?</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Why?</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Why?</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">-</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">Mission:<br />Prevent TVs ending up <br />at the rubbish tip</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">-</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Solution:<br />MAME Cabinet!</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">-</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Criteria:<br />Use as much "rubbish" as possible</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Choice 1: Style</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Traditional arcade cabinet</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Cocktail table</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Countless others...</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">My Choice:<br />Cocktail table</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Choice 2: Controllers</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Arcade cabinet controls</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Joystics and buttons</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Three way rotating control panel</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Seven way, dual rotating control panel</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Cocktail table controls</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">First thought</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Standard setup</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">Pullout draws</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Pullout draws</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29">My Choice:<br />Mobile phone via wireless<br />(i.e. None of the above)</a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-30">
+        <th><a href="#slide30">Choice 3: Software stack</a></th>
+        <td><a href="#slide30">30</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-31">
+        <th><a href="#slide31">For a hacker community...<br />...massive Windows users</a></th>
+        <td><a href="#slide31">31</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-32">
+        <th><a href="#slide32">Preconfigured OS</a></th>
+        <td><a href="#slide32">32</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-33">
+        <th><a href="#slide33">Clean install + custom configuration</a></th>
+        <td><a href="#slide33">33</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-34">
+        <th><a href="#slide34">My Choice:<br />Arch Linux + IceWM<br />==<br />5 second boot time</a></th>
+        <td><a href="#slide34">34</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-35">
+        <th><a href="#slide35">Choice 3: Games!</a></th>
+        <td><a href="#slide35">35</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-36">
+        <th><a href="#slide36">Emulators</a></th>
+        <td><a href="#slide36">36</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-37">
+        <th><a href="#slide37">Legality of emulating games</a></th>
+        <td><a href="#slide37">37</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-38">
+        <th><a href="#slide38">-</a></th>
+        <td><a href="#slide38">38</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-39">
+        <th><a href="#slide39">My Choice:<br />Atari 2600<br />(Then others later on)</a></th>
+        <td><a href="#slide39">39</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-40">
+        <th><a href="#slide40">The end result...</a></th>
+        <td><a href="#slide40">40</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-41">
+        <th><a href="#slide41">Using this table...</a></th>
+        <td><a href="#slide41">41</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-42">
+        <th><a href="#slide42">...and this perspex...</a></th>
+        <td><a href="#slide42">42</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-43">
+        <th><a href="#slide43">...and these offcuts of timber...</a></th>
+        <td><a href="#slide43">43</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-44">
+        <th><a href="#slide44">...to attach this eeePC...</a></th>
+        <td><a href="#slide44">44</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-45">
+        <th><a href="#slide45">I built this... cat?</a></th>
+        <td><a href="#slide45">45</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-46">
+        <th><a href="#slide46">I built this... table...</a></th>
+        <td><a href="#slide46">46</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-47">
+        <th><a href="#slide47">I built this table...</a></th>
+        <td><a href="#slide47">47</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-48">
+        <th><a href="#slide48">I built this table...</a></th>
+        <td><a href="#slide48">48</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-49">
+        <th><a href="#slide49">I built this table...</a></th>
+        <td><a href="#slide49">49</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-50">
+        <th><a href="#slide50">...which connects...</a></th>
+        <td><a href="#slide50">50</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-51">
+        <th><a href="#slide51">...to this...</a></th>
+        <td><a href="#slide51">51</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-52">
+        <th><a href="#slide52">..which launches this...</a></th>
+        <td><a href="#slide52">52</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-53">
+        <th><a href="#slide53">Future goals</a></th>
+        <td><a href="#slide53">53</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-54">
+        <th><a href="#slide54">Other uses for old CRT TVs</a></th>
+        <td><a href="#slide54">54</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-55">
+        <th><a href="#slide55">-</a></th>
+        <td><a href="#slide55">55</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-56">
+        <th><a href="#slide56">-</a></th>
+        <td><a href="#slide56">56</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-57">
+        <th><a href="#slide57">-</a></th>
+        <td><a href="#slide57">57</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-58">
+        <th><a href="#slide58">Conclusion</a></th>
+        <td><a href="#slide58">58</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-59">
+        <th><a href="#slide59">Resources</a></th>
+        <td><a href="#slide59">59</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<html>
+<head>
+	<title>Prototype C++ Extension</title>
+	<link rel="stylesheet" type="text/css" href="pres.css"/>
+</head>
+
+<body>
+
+<p class="nav">
+<a href="06_ivt_example.html">Previous</a>
+::
+<a href="08_conclusion.html">Next</a>
+</p>
+
+<h1>Prototype C++ Extension</h1>
+
+<p>
+When functions are invoked in this class, we have a business requirement to 
+log that fact. In order to do that, we add a call to the logger at the 
+beginning of the function.
+</p>
+
+<pre>
+class RequiresLogging
+{
+
+	public function secretAction()
+	{
+		Logger::log( "notice", "Secret action performed by user " . $_SESSION['user'] );
+		// perform secret action...
+	}
+
+}
+</pre>
+
+<p>
+This doesn't seem like much work, but of course there will not be just one 
+ation performed by this class. Also, the calls to the logger are littered 
+everywhere. Because we all like abstraction so much, enabling via attributes 
+will provide a simplistic and very maintainable solution.
+</p>
+
+<p>
+In order to make this work, the extension has one main function <code>add_function_hook()</code>.
+The function works a lot like an Aspect Oriented technique, whereby a function call is intercepted 
+and redirected to a function specified by the developer. The difference is that the function is only intercepted if 
+it has a particular attribute in its comments. Essentially, every time a function is called,
+the extension:
+</p>
+
+<ol>
+	<li>Checks for any attributes</li>
+	<li>Searches for any function hooks that have been added for those attributes</li>
+	<li>Invokes those functions</li>
+	<li>Returns control back to the destination function</li>
+</ol>
+
+<p>
+So to implement the above code in an attribute oriented manner, we will need to:
+</p>
+
+<ol>
+	<li>Define an attribute which declares that a function needs to be logged</li>
+	<li>Create a function which will get invoked every time the log attribute is present</li>
+	<li>Add a function hook so that every time the log attribute is found, the log function is invoked</li>
+</ol>
+
+<pre>
+class RequiresLogging
+{
+
+	/**
+	 * @log notice "Secret action performed by user [user]
+	 */
+	public function secretAction()
+	{
+		// perform secret action...
+	}
+
+}
+
+function performLog( $message )
+{
+	$parts = split( " ", $message, 2 );
+	$level = $parts[0];
+	$message = $parts[1];
+	Logger::log( $level, $message );
+}
+
+add_function_hook( "log", "performLog" );
+
+$object = new RequiresLogging();
+$object->secretAction();
+</pre>
+
+<p>
+The amount of boiler plate code is no different from, say, a custom error handler
+in PHP, yet once done, logging becomes extermely simple. I have also played around
+with other parameters to <code>add_function_hook</code>, especially one which prevents
+the original destination function (secretAction in our example) from being executed
+if the registered hook function returns false after analysing the attributes. This 
+would allow for low level permissioning of functions, at the Zend engine level. 
+</p>
+
+</body>
+
+</head>

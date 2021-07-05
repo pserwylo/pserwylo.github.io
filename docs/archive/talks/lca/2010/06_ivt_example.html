@@ -1,0 +1,154 @@
+<html>
+<head>
+	<title>Real World Example</title>
+	<link rel="stylesheet" type="text/css" href="pres.css"/>
+</head>
+
+<body>
+
+<p class="nav">
+<a href="05_complex_use_case.html">Previous</a>
+::
+<a href="07_php_zend_example.html">Next</a>
+</p>
+
+<h1>Real World Example</h1>
+
+<p>
+At Internet Vision Techonologies, we develop a service oriented web application.
+Given it is already split nicely into services, we decided to expose certain functionality
+externally as web services. In order to do this, we use a simplistic implementation of AOP
+in PHP, using the PHP reflection API, to permission certain functions. Each function 
+which is to be exposed as a web service requires an attribute called <code>@access</code>.
+If this is not present, the function is not exposed as a web service. If it is defined 
+then the currently logged in user must hold all of the access credentials specified.
+</p>
+
+<pre>
+require_once( "AttributeFinder.php" );
+
+class RecordService
+{
+    
+    /**
+     * This function will pretend to create a record, but will restrict access
+     * to users with a position of 'admin' and 'user'.
+     * @access admin Requires admin users to create a new record
+     * @access user Also must be of type user
+     */
+    public function createRecord( $name )
+    {
+        echo "Creating record...\n";
+    }
+
+}
+
+$attributeFinder = new AttributeFinder( "RecordService", "createRecord" );
+$requiredAccess = $attributeFinder->getAccess();
+
+echo "Only go ahead with the invocation of createRecord() if the current user is in all of these groups:\n";
+echo implode( ", ", $requiredAccess ) . "\n";
+</pre>
+
+<p>
+The above code shows an example usage of this technique. The class AttributeFinder is
+just a very simple class which utilises PHP's reflection API to extract the doc 
+comments and then perform a little bit of string processing to extract the attributes.
+</p>
+
+<pre>
+/**
+ * Given a class or a method, looks for particular attributes inside the doc-comments for that class/method.
+ * Also has a few helper functions for tasks which this was introduced for (i.e. method authentication).
+ * @author Peter Serwylo (peter@ivt.com.au)
+ */
+class AttributeFinder
+{
+
+	private $className;
+	private $methodName;
+	private $docComments;
+
+	public function __construct( $class, $method = "")
+	{
+		if ( strlen( trim( $method ) ) )
+		{
+			$reflect = new ReflectionMethod( $class, $method );
+		}
+		else 
+		{
+			$reflect = new ReflectionClass( $class );
+		}
+
+		$this->className = $class;
+		$this->methodName = $method;
+		$this->docComments = $reflect->getDocComment();
+	}
+
+	/**
+	 * Looks for the attribute in the doc comments of the specified class/function.
+	 * Returns an array, because there can be multiple's of any attribute 
+	 * (like in standard PHP: param, in your application: access).
+	 * @param string $attribute
+	 * @return array List of attribute values matching $attribute.
+	 */
+	private function getAttributes( $attribute )
+	{
+		if ( substr( $attribute, 0, 1 ) != "@" )
+		{
+			$attribute = "@" . $attribute;
+		}
+		
+		$tag = trim( $tag );
+		
+		$matches = array();
+		preg_match_all( "/" . $attribute . "(.*)/", $this->docComments, $matches );
+		
+		if ( isset( $matches[1] ) )
+		{
+			return $matches[1];
+		}
+		
+		return array();
+	
+	}
+
+	/**
+	 * Parses the attributes, collecting every "@access" tag.
+	 * Each tag can have a comment as well, but only the first "word" is examined and expected to be an int.
+	 * In the example tag of: "@access admin Super user can have access because ..."
+	 * The 'admin' value will get extracted and added to the array of required access.
+	 * @return array List of permission's which are allowed to access this method.
+	 */
+	public function getAccess()
+	{
+		$matches = $this->getAttributes( "@access" );
+
+		$access = array();
+		foreach( $matches as $match )
+		{
+			$match = trim( $match );
+
+			if ( strlen( $match ) == 0 )
+			{
+				$error = 
+					"Invalid @access syntax for " . $this->className . "::" . $this->methodName . "(). " . 
+					"Expecting an integer as the first value after the attribute tag, '" . $parts[0] . "' given.";
+				trigger_error( $error, E_USER_WARNING );
+			}
+			else
+			{
+				$parts = split( " ", $match, 2 );
+				$permissionRequired = trim( $parts[0] );
+				$access[] = $permissionRequired;
+			}
+		}
+		return $access;
+	}
+
+}
+</pre>
+
+</body>
+
+</head>

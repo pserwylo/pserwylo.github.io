@@ -56,6 +56,9 @@ collections:
   posts:
     output: true
     permalink: /:year/:month/:day/:slug
+  legacy_blog:
+    output: true
+    permalink: /:year/:month/:day/:slug
   
 defaults:
   -

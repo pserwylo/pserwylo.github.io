@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>What is an Attribute?</title>
+	<link rel="stylesheet" type="text/css" href="pres.css"/>
+</head>
+
+<body>
+
+<p class="nav">
+<a href="index.html">Previous</a>
+::
+<a href="03_what_is_aop.html">Next</a>
+</p>
+
+<h1>What is an Attribute?</h1>
+
+<p>
+You will all be familiar with attributes, no matter what language you use,
+or how you choose to use it. An attribute is a tag inside a comment block,
+which has a special meaning somewhere, somehow. In the majority of cases, the
+tags are processed during documentation generation:
+</p>
+
+<pre>
+/**
+ * Creates a new record and returns its serial.
+ * @param string $name The title of the record to create.
+ * @return int The serial number of the newly created record.
+ */
+public function createRecord( $name ) { ... }
+</pre>
+
+<p>
+In the above example, the tags <code>@param</code> and <code>@return</code> are 
+attributes. When generating documentation for the function, those two lines have
+special significance, because they will end up in a particular location in the
+documentation template, with a particular type of formating, and perhaps a 
+link to another part of the documentation.
+</p>
+
+</body>
+
+</head>

@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title>A More Complex Use Case</title>
+	<link rel="stylesheet" type="text/css" href="pres.css"/>
+</head>
+
+<body>
+
+<p class="nav">
+<a href="04_simple_use_case.html">Previous</a>
+::
+<a href="06_ivt_example.html">Next</a>
+</p>
+
+<h1>A More Complex Use Case</h1>
+
+<p>
+Without going into too much detail, we will have a look at a more complex use
+case for AOP. A good example is that provided by Java 2 Enterprise Edition. 
+In order to deploy one 'Bean' (essentially a class which performs business logic) 
+which is accessible by a J2EE server and clients, you require at least four files:
+<ul>
+<li>
+	The bean class itself:<br />
+	<code>public function RecordEJB implements SessionBean { ... }</code><br /><br />
+</li>
+<li>
+	A 'remote' interface:<br />
+	<code>public interface Record extends EJBObject { ... }</code><br /><br />
+</li>
+<li>
+	A 'home' interface:<br />
+	<code>public interface RecordHome extends EJBHome { ... }</code><br /><br />
+</li>
+<li>XML defining the bean name, type and other information</li>
+</ul>
+
+The contents of each of these files depend on what functions exist in the original Bean. As you
+can imagine, there is a lot of work to be done when a new function is added to
+the bean. In this case, a tool called <a href="http://xdoclet.sourceforge.net/">xdoclet</a> employs AOP to automatically 
+generate a heap of scaffolding code for you at complile time. It does this by
+preprocessing the class and method comments looking for attributes of interest. 
+</p>
+
+<pre>
+/**
+ * @ejb-bean name="Record"
+ */
+public function RecordEJB implements SessionBean { ... }
+</pre>
+
+<p>
+Now instead of writing all of the afore mentioned files manually an automated
+build process can parse the @ejb-bean attribute, and automatically generate
+all of the required scaffolding. The tool used to do this supports multiple 
+attributes, each contributin to different parts of the code generation. For 
+example, just at the class level, the following attribute tags are available:
+</p>
+
+<code>@ejb.bean, @ejb.dao, @ejb.data-object, @ejb.ejb-external-ref, @ejb.ejb-ref, 
+@ejb.env-entry, @ejb.facade, @ejb.finder, @ejb.home, @ejb.interface, 
+@ejb.persistence, @ejb.pk, @ejb.remote-facade, @ejb.resource-env-ref, 
+@ejb.resource-ref, @ejb.security-identity, @ejb.security-role-ref, 
+@ejb.security-roles, @ejb.util, @ejb.value-object
+</code>
+
+<p>
+Each of these attributes mean something different to xdoclet, despite them just
+being plain text to the Java VM. You can see from the extent of the xdoclet 
+tool that there is a multitude of uses that can be achieved. Incidentaly, the
+syntax used to annotate Java code with xdoclet attributes does not use the native
+Java Annotation sytax, presumably because that was a relatively new addition to
+the syntax, whereas xdoclet has been around for a while.
+</p>
+
+<p>
+The only point about this example though, is that AOP is used as a preprocessing 
+step during the build process. Because PHP is an interpreted language, this 
+facility does not exist. The following example will show how we use AOP 
+at runtime in a PHP application at IVT.
+</p>
+
+</body>
+
+</head>

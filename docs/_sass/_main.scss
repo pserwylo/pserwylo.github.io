@@ -235,11 +235,11 @@ header a.active {
 
 header,
 section {
-	padding: 1rem 0;
+	padding: 0.5rem 0;
 }
 
 section {
-	margin-top: 5.5rem;
+	margin-top: 1rem;
 }
 
 blockquote {
@@ -273,7 +273,7 @@ h3, h4, h5 {
 }
 
 section h1:first-child {
-	margin-top: 0;
+	margin-top: 2rem;
 }
 
 strong,
@@ -301,6 +301,7 @@ b {
 .posts ul,
 header ul {
 	list-style: none;
+    margin-top: 0.5rem;
 }
 
 .posts li {

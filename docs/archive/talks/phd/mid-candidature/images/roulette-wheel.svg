@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="roulette-wheel.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="226.96908"
+     inkscape:cy="424.81831"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="709"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       transform="translate(-223.24371,123.23861)"
+       sodipodi:type="arc"
+       style="fill:#8dd3c7;fill-opacity:1;stroke:#5c5c5c;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path2987-1"
+       sodipodi:cx="354.28571"
+       sodipodi:cy="440.93362"
+       sodipodi:rx="154.28572"
+       sodipodi:ry="154.28572"
+       d="m 508.57143,440.93362 a 154.28572,154.28572 0 0 1 -1.42684,20.93428 L 354.28571,440.93362 z"
+       sodipodi:start="0"
+       sodipodi:end="0.13610497" />
+    <path
+       transform="matrix(-0.05288779,0.99860047,-0.99860047,-0.05288779,590.23037,231.48083)"
+       sodipodi:type="arc"
+       style="fill:#fb8072;fill-opacity:1;stroke:#5c5c5c;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path2987-4"
+       sodipodi:cx="354.28571"
+       sodipodi:cy="440.93362"
+       sodipodi:rx="154.28572"
+       sodipodi:ry="154.28572"
+       d="M 508.57143,440.93362 A 154.28572,154.28572 0 0 1 338.60816,594.42075 l 15.67755,-153.48713 z"
+       sodipodi:start="0"
+       sodipodi:end="1.6725857"
+       inkscape:transform-center-x="78.66221"
+       inkscape:transform-center-y="39.636103" />
+    <path
+       transform="matrix(0.86692158,0.49844455,-0.49844455,0.86692158,44.758047,2.8431749)"
+       sodipodi:type="arc"
+       style="fill:#bebada;fill-opacity:1;stroke:#5c5c5c;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path2987-3"
+       sodipodi:cx="354.28571"
+       sodipodi:cy="440.93362"
+       sodipodi:rx="154.28572"
+       sodipodi:ry="154.28572"
+       d="M 508.57143,440.93362 A 154.28572,154.28572 0 0 1 421.37324,579.87011 L 354.28571,440.93362 z"
+       sodipodi:start="0"
+       sodipodi:end="1.1209506"
+       inkscape:transform-center-x="-61.883279"
+       inkscape:transform-center-y="79.191707" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#80b1d3;fill-opacity:1;stroke:#5c5c5c;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path2987"
+       sodipodi:cx="354.28571"
+       sodipodi:cy="440.93362"
+       sodipodi:rx="154.28572"
+       sodipodi:ry="154.28572"
+       d="m 508.57143,440.93362 a 154.28572,154.28572 0 1 1 -308.57145,0 l 154.28573,0 z"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       transform="matrix(-1,0,0,-1,485.3277,1004.8586)" />
+    <path
+       transform="matrix(0.99193807,0.12672352,-0.12672352,0.99193807,-164.713,82.095343)"
+       sodipodi:type="arc"
+       style="fill:#ffffb3;fill-opacity:1;stroke:#5c5c5c;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path2987-2"
+       sodipodi:cx="354.28571"
+       sodipodi:cy="440.93362"
+       sodipodi:rx="154.28572"
+       sodipodi:ry="154.28572"
+       d="m 508.57143,440.93362 a 154.28572,154.28572 0 0 1 -11.61451,58.72827 L 354.28571,440.93362 z"
+       sodipodi:start="0"
+       sodipodi:end="0.39049493"
+       inkscape:transform-center-x="-77.818765"
+       inkscape:transform-center-y="39.845287" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="290.92392"
+       y="578.60059"
+       id="text3822"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3824"
+         x="290.92392"
+         y="578.60059"
+         style="font-size:16px">Pr( Injury = Cardiac arrest ) ~ 0.05</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="280.34015"
+       y="623.96143"
+       id="text3822-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3824-7"
+         x="280.34015"
+         y="623.96143"
+         style="font-size:16px">Pr( Injury = Fracture ) ~ 0.06</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="212.01776"
+       y="710.83459"
+       id="text3822-0-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3824-7-4"
+         x="212.01776"
+         y="710.83459"
+         style="font-size:16px">Pr( Injury = Asthma attack ) ~ 0.2 </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-249.59384"
+       y="680.99945"
+       id="text3822-0-8-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3824-7-4-2"
+         x="-249.59384"
+         y="680.99945"
+         style="font-size:16px">Pr( Injur = Sprain/strain ) ~ 0.24</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="115.76735"
+       y="396.13651"
+       id="text3822-0-8-6-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3824-7-4-2-9"
+         x="115.76735"
+         y="396.13651"
+         style="font-size:16px">Pr( Injury = Cut/bruise ) ~ 0.5</tspan></text>
+  </g>
+</svg>

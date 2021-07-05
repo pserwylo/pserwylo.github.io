@@ -45,3 +45,34 @@ layout: default
         {% endfor %}
     </ul>
 </section>
+
+<section class="posts" id="legacy_blog">
+    <h2>Legacy blog posts</h2>
+    <p>Substantially older posts. Written for a different time, in a different style, by a different me. <em>It is quite likely these have poor or outdated advice in them.</em></p>
+    <ul id="legacy-post-list">
+        {% for post in site.legacy_blog %}
+        <li>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a id="show-legacy-post-list" href="#" style="display: none">Show legacy posts</a>
+
+    <script>
+        (function() {
+            var legacyPosts = document.getElementById('legacy-post-list');
+            legacyPosts.style.display = 'none';
+            
+            var showLegacyPosts = document.getElementById('show-legacy-post-list');
+            showLegacyPosts.style.display = 'inline';
+            showLegacyPosts.innerText = 'Show {{ site.legacy_blog | size }} legacy posts';
+            showLegacyPosts.onclick = function(event) {
+                legacyPosts.style.display = 'block';
+                showLegacyPosts.style.display = 'none';
+                event.preventDefault();
+            };
+        })();
+    </script>
+</section>

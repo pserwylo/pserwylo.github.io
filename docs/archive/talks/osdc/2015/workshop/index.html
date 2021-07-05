@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>F-Droid OSDC 2015</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="Peter Serwylo">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Submitting your Android app to F-Droid</h1>
+					<p><img style="width: 80px; border: none; background: none" src="images/fdroid.png" /></p>
+					<h4>OSDC Hobart, 2015</h4>
+					<p><small>Workshop notes: <a href="https://gitlab.com/pserwylo/osdc-fdroid-workshop#submitting-your-android-app-to-f-droid">http://polr.me/FDroidOSDC</a></small></p>
+				</section>
+
+				<section>
+
+					<section>
+						<h2>What is</h2>
+						<p><img style="width: 150px; border: none; background: none" src="images/fdroid.png" /><span style="font-size: 6em;">?</span></p>
+					</section>
+						
+					<section>
+						<h2>F-Droid is...</h2>
+						<p>... an alternative to the Google Play store for free and open source apps.</p>
+					</section>
+
+					<section>
+						<h2>F-Droid (client) is...</h2>
+						<p>... an app that allows you to search for and install apps, be notified of updates, swap apps with your mates.</p>
+					</section>
+
+					<section>
+						<h2>F-Droid (data) is...</h2>
+						<p>... a repository of over 1,000 apps that are built from source.</p>
+					</section>
+
+					<section>
+						<h2>F-Droid (server) is...</h2>
+						<p>... a tool for managing repositories, including building apks from source in a safe and secure manner.</p>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Goals for today</h2>
+					<ol>
+						<li>
+							Understand the 3 different parts of the F-Droid project
+						</li>
+						<li>
+							Publish your apps via your <em><strong>own</strong></em> repository
+						</li>
+						<li>
+							Submit an app to the <em><strong>main F-Droid</strong></em> repository
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>OSDC Workshop</h2>
+					<p>fdroidserver + fdroiddata (not fdroidclient)</p>
+				</section>
+
+				<section>
+
+					<section>
+						<h1>Workshop</h1>
+					</section>
+					
+					<section>
+						<h1>Workshop part 0/3</h1>
+						<h2>Setting up</h2>
+						<p>
+							<a href="https://gitlab.com/pserwylo/osdc-fdroid-workshop/blob/master/setting-up.md#setting-up">
+								http://polr.me/FDroidOSDCSetup
+							</a>
+						</p>
+					</section>
+
+					<section>
+						<h1>Workshop part 1/3</h1>
+						<h2>Binary repository</h2>
+						<p>
+							<a href="https://gitlab.com/pserwylo/osdc-fdroid-workshop/blob/master/binary-repo.md#getting-a-feel-for-fdroidserver-creating-a-binary-repository">
+								http://polr.me/FDroidOSDCBinary
+							</a>
+						</p>
+					</section>
+
+					<section>
+						<h1>Workshop part 2/3</h1>
+						<h2>Binary repository <small>(a bit better)</small></h2>
+						<p>
+							<a href="https://gitlab.com/pserwylo/osdc-fdroid-workshop/blob/master/binary-repo-improved.md#adding-metadata-to-your-binary-repository">
+								http://polr.me/FDroidOSDCBinary2
+							</a>
+						</p>
+					</section>
+
+					<section>
+						<h1>Workshop part 3/3</h1>
+						<h2>Building from source</h2>
+						<p>
+							<a href="https://gitlab.com/pserwylo/osdc-fdroid-workshop/blob/master/build-from-source.md#building-from-source-using-fdroidserver-to-build-your-app">
+								http://polr.me/FDroidOSDCSource
+							</a>
+						</p>
+					</section>
+				
+				</section>
+
+				<section>
+					<h1>Topics for diversion</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>Inclusion Policy</h2>
+						<p>Only applies to https://f-droid.org repository.</p>
+						<p>
+							<a href="https://f-droid.org/wiki/page/Inclusion_Policy">https://f-droid.org/wiki/page/Inclusion_Policy</a>
+						</p>
+					</section>
+					<section>
+						<h1>Common gotchas</h1>
+					</section>
+					<section>
+						<h2>Priorietary dependencies</h2>
+						<ul>
+							<li>Google Maps/Analytics/etc</li>
+							<li>Crashlytics</li>
+							<li>etc.</li>
+						</ul>
+						<pre><code data-trim>
+dependencies {
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.android.support:cardview-v7:21.0.3'
+    ...
+    compile 'com.google.android.gms:play-services-ads:7.3.0'
+}	
+						</code></pre>
+					</section>
+					<section>
+						<h2>Random binary depenencies</h2>
+						<p><small>(even if they are open source)</small></p>
+						<pre><code data-trim>
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.android.support:support-v4:23.0.0'
+    compile 'com.android.support:cardview-v7:23.0.0'
+    compile 'com.android.support:recyclerview-v7:23.0.0'
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Not open source?!</h2>
+					</section>
+					<section>
+						<h2>Conflicting licenses</h2>
+						<p>Common is GPLv2 using Apache licensed Android support libraries</p>
+						<p>GPLv3 <em>is</em> compatible</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>F-Droid Build Bot</h2>
+						<p>Only applies to https://f-droid.org repository.</p>
+					</section>
+					<section>
+						<h2>Checks for updates daily</h2>
+						<p>Using the command:</p>
+<pre><code data-trim>
+fdroid checkupdates
+</code></pre>
+					</section>
+					<section>
+						<h2>Builds apps daily</h2>
+						<p>Some apps (e.g. LibreOffice or Firefox/Fennec) take a <em>long</em> time</p>
+					</section>
+					<section>
+						<h2>Logs posted to wiki</h2>
+						<ul>
+							<li>Navigate to <a href="https://f-droid.org/repository/browse/?fdfilter=f-droid&fdid=org.fdroid.fdroid">your app</a> https://f-droid.org</li>
+							<li>Click "See this applications page on the wiki"</li>
+							<li>In the info box on the right, click the buildlog link</li>
+							<li>Really only interesting for failures (e.g. <a href="https://f-droid.org/wiki/page/dk.nindroid.rss/lastbuild">this app</a>)</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1><span style="color: red"><em>Anti</em></span>Features</h1>
+						<blockquote>
+							"Some software, while being Free and Open Source, may engage in practices which are undesirable to some or all users. Where possible, we still include these applications in the repository, but they are flagged with the appropriate AntiFeatures"
+						</blockquote>
+						<p><small>Source: <a href="https://f-droid.org/wiki/page/Inclusion_Policy">https://f-droid.org/wiki/page/Inclusion_Policy</a></small></p>
+					</section>
+
+					<section>
+						<h1><span style="color: red"><em>Anti</em></span>Features</h1>
+						<ul>
+							<li>Ads</li>
+							<li>Tracking</li>
+							<li>Non-Free Network Services</li>
+							<li>Non-Free Addons</li>
+							<li>Upstream Non-Free</li>
+						</ul>
+						<p><small>Source: <a href="https://f-droid.org/wiki/page/Antifeatures">https://f-droid.org/wiki/page/Antifeatures</a></small></p>
+					</section>
+				</section>
+
+				<section>
+					<h1>Auto updates</h1>
+					<h2>Based on git tags</h2>
+				</section>
+				
+				<section>
+					<section>
+						<h1>Reproduceable Builds</h1>
+					</section>
+					<section>
+						<h2>All Android apks are signed</h2>
+						<p>Can't upgrade an app to a new version with a different key (this is good)</p>
+					</section>
+					<section>
+						<h2>F-Droid uses its own signing key</h2>
+						<p>Have to uninstall upstream/Google Play version before installing F-Droid (this is annoying)</p>
+					</section>
+					<section>
+						<h2>Reproduceable builds should solve this soon</h2>
+						<p>Upstream builds .apk and signs for distribution</p>
+						<p>F-Droid builds from upstream source</p>
+						<p>If binaries match, F-Droid distributes upstreams .apk</p>
+					</section>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,7 @@
+Finding vulnerabilities in PHP code (via static code analysis)
+
+PHP, Security, Static Code Analysis
+
+Most people are familiar with common vulnerabilities in PHP code, such as SQL Injections and XSS. SQL Injections can be prevented by using a good database abstraction layer, but there may be old code which depends on developers manually sanitising all input. XSS vulnerabilities may not be dealt with properly, nor may command execution vulnerabilities using functions such as system(). 
+
+Static code analysis (SCA) can help identify issues such as these without having to execute the code. This talk will discuss the process of SCA in general, issues unique to dynaimc languages such as PHP, then a particular FOSS tool for PHP SCA.

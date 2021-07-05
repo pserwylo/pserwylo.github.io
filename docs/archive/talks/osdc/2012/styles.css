@@ -1,0 +1,25 @@
+div.slides, body.expose div.presentation div.slides.nocontext {
+	background-color: black;
+}
+
+div.presentation {
+	background-color: black;
+}
+
+.quote {
+	font-size: 2em;
+	width: 60%;
+	padding: 50px 50px 50px 100px;
+}
+
+img {
+	max-height: 700px;
+	max-width: auto;
+	background: none;
+	margin: auto;
+}
+
+a {
+	border: none;
+	text-decoration: underline;
+}

@@ -1,0 +1,472 @@
+<html>
+<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="custom.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+</head>
+<body>
+		<div class="reveal">
+				<div class="slides">
+						<section>
+							<h1>Version Control</h1>
+							<p>using <code>git</code>, for researchers</p>
+							<p class="smaller">Thanks to <a href="http://swcarpentry.github.io/git-novice/index.html">Software Carpentry</a></p>
+						</section>
+						<section>
+							<h2>Todays Goals</h2>
+							<p>Single person, no internet</p>
+							<p>Single person, backed up online</p>
+							<p>Multiple people, collaborative</p>
+						</section>
+						<section data-background-image="splash.gif" data-background-size="contain"></section>
+						<section>
+							<h2>Why version control using <code>git</code>?</h2>
+							<ul>
+								<li class="fragment">
+									<div>Version history ("undo" over larger periods of time)
+									<div class="fragment">Like Dropbox!</div>
+								</li>
+								<li class="fragment">
+									<div>Backup (in case of your computer failing)</div>
+									<div class="fragment">Like Dropbox!</div>
+								</li>
+								<li class="fragment">
+									<div>Sharing with collaborators (rather than using email)
+									<div class="fragment">Like Dropbox!</div>
+								</li>
+							</ul>
+						</section>
+						<section>
+							<p>but <code>git</code> is different...</p>
+						</section>
+						<section>
+							<ul class="smaller">
+								<li>Ensure collaborators never overwrite each others changes</li>
+								<li>Comparing what has changed between specific revisions</li>
+								<li>Full version history on your local computer</li>
+								<li>Collaborators have full version history on their local computer</li>
+								<li>Individual changes have labels</li>
+								<li>Individual changes have descriptions</li>
+								<li>Each part of the document can be attributed to the individual that introduced it</li>
+								<li>Each part of the document can traced to the date it was introduced</li>
+								<li>Each part of the document is associated with a description of when it was introduced</li>
+								<li>Backup in multiple places</li>
+								<li>Needn't trust a single organisation with your backups</li>
+								<li>Choice between the services/tools you use to manage versions</li>
+								<li>Tooling allows people to discuss changes before incorporating them</li>
+								<li>Tooling makes it easier to share results with the world</li>
+								<li>Multiple versions of the same document coexist simultaniously</li>
+								<li>Many different advanced workflows to choose from for more complex projects</li>
+								<li>...</li>
+							</ul>
+						</section>
+						<section>
+							<section>
+								<h2>How Dropbox thinks of files...</h2>
+								<img src="dropbox-revisions.svg" />
+								<p>Each revision is an entire document</p>
+							</section>
+							<section>
+								<h2>How Dropbox thinks of files...</h2>
+								<img src="dropbox-revisions.svg" />
+								<p>No concept of <em>what</em> changed between revisions</p>
+							</section>
+						</section>
+						<section>
+							<section>
+								<h2>How <code>git</code> thinks of files...</h2>
+								<img src="play-changes.svg" />
+								<p>A documents is a series of changes</p>
+							</section>
+							<section>
+								<h2>How <code>git</code> thinks of files...</h2>
+								<img src="play-changes.svg" />
+								<p>Each change either adds, removes, or modifies some number of lines</p>
+							</section>
+							<section>
+								<h2>How <code>git</code> thinks of files...</h2>
+								<img src="play-changes.svg" />
+								<p><code>git</code> constructs documents by applying series of changes</p>
+							</section>
+						</section>
+						<section style="text-align: left">
+							<h2>"Commits"</h2>
+							<p>Each of these changes is called a "commit" and contains:</p>
+							<ul>
+								<li>What lines were added/removed/modified</li>
+								<li class="fragment" data-fragment-index="1">Author</li>
+								<li class="fragment" data-fragment-index="1">Date</li>
+								<li class="fragment" data-fragment-index="1">Description</li>
+								<li class="fragment" data-fragment-index="1">The change that came before it</li>
+							</ul>
+						</section>
+						<section>
+							<h2>This is important</h2>
+							<p>We will talk about this at every opportunity</p>
+						</section>
+						<section>
+							<section>
+								<h2>Lets begin</h2>
+								<p>Boring stuff first, that needs to be done once</p>
+							</section>
+							<section>
+								<h2>Exercise: Install <code>git</code></h2>
+								<p><a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+							</section>
+							<section>
+								<h2>Exercise: Configure <code>git</code></h2>
+								<p>Git needs to know about you to attribute your changes</p>
+<pre><code class="bash" data-trim>
+git config --global user.name "Peter Serwylo"
+git config --global user.email "peter.serwylo@monash.edu"
+</code></pre>
+								<div class="fragment smaller">
+										<p>If you use windows, and are unfamiliar with <code>vim</code>:</p>
+<pre><code class="bash" data-trim>
+git config --global core.editor notepad
+</code></pre>
+										<p>If you use MacOSX, and are unfamiliar with <code>vim</code>:</p>
+<pre><code class="bash" data-trim>
+git config --global --add core.editor "open -W -n"
+</code></pre>
+								</div>
+							</section>
+						</section>
+						<section>
+							<h1>The Situation</h2>
+							<p>Dracula, Wolfman, and the Mummy research moving to another planet want to share their research</p>
+							<img src="dracula_and_wolfman.jpg" />
+						</section>
+						<section>
+							<h2>Creating a "Repository"</h2>
+							<p>Repositories store all the commits for a project.</p>
+							<p>From the directory you wish to turn into a <code>git</code> repo:</p>
+							<pre><code class="bash" data-trim>git init</code></pre>
+							<pre><code class="bash" data-trim>
+Initialized empty Git repository in .../.git/
+</code></pre>
+						</section>
+						<section>
+							<section>
+								<h2>What does <code>git</code> know so far?</h2>
+								<p>Nothing.</p>
+								<p class="smaller"><code>git</code> only saves to the repository when we explicitly ask it to create a commit</p>
+							</section>
+							<section>
+								<h2>What does <code>git</code> know so far?</h2>
+								<p class="smaller"><code>git log</code>:&nbsp;&nbsp; Show commits in your repository</p>
+								<pre><code class="bash" data-trim>git log</code></pre>
+								<pre><code data-trim class="bash">
+fatal: your current branch 'master' does not have any commits yet
+</code></pre>
+							</section>
+							<section>
+								<h2>What does <code>git</code> know so far?</h2>
+								<p class="smaller"><code>git status</code>:&nbsp;&nbsp; Show changes in your directory that are yet<br /> to be saved to the repository in a commit</p>
+								<pre><code class="bash" data-trim>git status</code></pre>
+								<pre><code data-trim class="bash">
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+</code></pre>
+							</section>
+						</section>
+						<section>
+							<h2>Exercise: Your first repo</h2>
+							<p>Create a repo using <code>git init</code>.</p>
+							<p>Run <code>git status</code> and <code>git log</code> to ask about your repository.</p>
+						</section>
+						<section>
+							<section>
+								<h2>Add content for <code>git</code> to track</h2>
+								<p>Put the following text in a file "mars.txt"</p>
+								<pre><code data-trim>
+									Cold and dry, but everything is my favorite colour
+								</code></pre>
+							</section>
+							<section>
+								<h2>Add content for <code>git</code> to track</h2>
+								<p>Ask <code>git</code> what it knows now...</p>
+								<pre><code data-trim>git status</code></pre>
+								<pre class="fragment"><code data-trim class="bash">
+On branch master
+
+Initial commit
+
+Untracked files:
+ (use "git add &lt;file&gt;..." to include in what will
+  be committed)
+
+	mars.txt
+
+nothing added to commit but untracked files present (use
+"git add" to track)
+								</code></pre>
+							</section>
+							<section>
+								<h2>Add content for <code>git</code> to track</h2>
+								<p>Tell <code>git</code> we want to prepare (but not yet create) a commit</p>
+								<pre><code data-trim>
+git add mars.txt
+								</code></pre>
+
+								<div class="fragment smaller">
+									<p>Then ask <code>git</code> again:
+									<pre><code data-trim class="bash">git status</code></pre>
+									<pre class="fragment"><code data-trim class="bash">
+On branch master
+
+Initial commit
+
+Changes to be committed:
+ (use "git rm --cached &gt;file&gt;..." to unstage)
+
+	new file:   mars.txt
+									</code></pre>
+								</div>
+							</section>
+							<section>
+								<h2>Add content for <code>git</code> to track</h2>
+								<p>Now a commit can be created</p>
+								<pre><code data-trim>git commit</code></pre>
+								<p>Enter a description of this commit in your text editor<br />(e.g. "First entry about Mars.") then <code>git</code> will output:</p>
+								<pre><code data-trim>
+[master (root-commit) e95d869] First entry about Mars.
+1 file changed, 1 insertion(+)
+create mode 100644 mars.txt
+								</code></pre>
+							</section>
+						</section>
+						<section>
+							<section>
+								<h2>What does <code>git</code> know <em>now</em>?</h2>
+								<p class="smaller"><code>git log</code>:&nbsp;&nbsp; Show commits in your repository</p>
+								<pre><code class="bash" data-trim>git log</code></pre>
+								<pre class="fragment"><code class="bash" data-trim>
+commit e95d8690fcad1374a3b0d1a0231ef63118367b28
+Author: Peter Serwylo &lt;peter@serwylo.com&gt;
+Date:   Mon Jul 11 16:33:24 2016 +1000
+
+    First entry about Mars.
+</code></pre>
+							</section>
+							<section>
+								<h2>What does <code>git</code> know <em>now</em>?</h2>
+								<p class="smaller"><code>git status</code>:&nbsp;&nbsp; Show changes in your directory that are yet<br /> to be saved to the repository in a commit</p>
+								<pre><code class="bash" data-trim>git status</code></pre>
+								<pre class="fragment"><code class="bash" data-trim>
+On branch master
+nothing to commit, working directory clean
+								</code></pre>
+							</section>
+						</section>
+						<section>
+							<h2>Exercise: Your first commit</h2>
+							<p>Create a text file and add some content to it</p>
+							<p class="smaller"><strong>Note: Make sure to only use text editors such as notepad or vim. Don't use MS Word or other word processors.</strong></p>
+							<p>Prepare a commit using <code>git add</code></p>
+							<p>Create a commit and save it to the repo using <code>git commit</code></p>
+							<p>Ask git about the commits in your repo using <code>git log</code>.</p>
+						</section>
+						<section>
+							<section>
+								<h2>More changes</h2>
+								<p>Add the following text to "mars.txt"</p>
+								<pre><code data-trim>
+									The two moons may be a problem for Wolfman
+								</code></pre>
+								<div class="smaller">
+									<p>The full contents of "mars.txt" should now be:</p>
+									<pre><code data-trim>
+Cold and dry, but everything is my favorite colour
+The two moons may be a problem for Wolfman
+									</code></pre>
+								</div>
+							</section>
+							<section>
+								<h2>More changes</h2>
+								<p>Ask <code>git</code> what it knows now...</p>
+								<p class="smaller">Remember, this command can and should be run as often as you want</p>
+								<pre><code data-trim>git status</code></pre>
+								<pre class="fragment"><code data-trim class="bash">
+On branch master
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in
+   working directory)
+
+	modified:   mars.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+								</code></pre>
+							</section>
+							<section>
+								<h2>More changes</h2>
+								<p>Ask <code>git</code> what has changed since our last commit</p>
+								<pre><code data-trim class="bash">git diff</code></pre>
+								<pre><code data-trim class="diff">
+diff --git a/mars.txt b/mars.txt
+index 382ccd9..8f7b000 100644
+--- a/mars.txt
++++ b/mars.txt
+@@ -1 +1,2 @@
+ Cold and dry, but everything is my favourite colour
++The two moons may be a problem for Wolfman
+								</code></pre>
+							</section>
+							<section>
+								<h2>More changes</h2>
+								<p>Tell <code>git</code> we want to prepare (but not yet create) a commit</p>
+								<pre><code data-trim>
+git add mars.txt
+								</code></pre>
+
+								<div class="fragment smaller">
+									<p>Then ask <code>git</code> again:
+									<pre><code data-trim>git status</code></pre>
+									<pre><code data-trim>
+On branch master
+Changes to be committed:
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
+
+	modified:   mars.txt
+									</code></pre>
+								</div>
+							</section>
+							<section>
+								<h2>More changes</h2>
+								<p>Now a commit can be created</p>
+								<pre><code data-trim>git commit</code></pre>
+								<p>Enter a description of this commit in your text editor<br />then <code>git</code> will output:</p>
+								<pre><code data-trim>
+[master c2d0b8b] Info about moons and their impact on Wolfman.
+ 1 file changed, 1 insertion(+)
+								</code></pre>
+							</section>
+						</section>
+						<section>
+							<h2>Exercise: Another commit</h2>
+							<p>Edit your text file, adding more content on.</p>
+							<p>Check that <code>git</code> knows stuff has changed with <code>git status</code></p>
+							<p>Ask specifically what has changed with <code>git diff</code></p>
+							<p>Prepare and create another commit<br /><span class="smaller">(<code>git add</code>, <code>git commit</code>, <code>git log</code>)</span></p>
+						</section>
+						<section>
+							<h2>Exploring History</h2>
+							<p>The goals include:</p>
+							<ul>
+								<li>Comparing different revisions</li>
+								<li>Reverting to past revisions</li>
+							</ul>
+						</section>
+						<section>
+							<h2>Comparing revisions</h2>
+							<ul>
+								<li>Edit file again</li>
+								<li>Don't commit</li>
+								<li>git diff, git diff HEAD~1, git diff [sha hash]</li>
+							</ul>
+						</section>
+						<section>
+							<h2>Reverting to past revisions</h2>
+							<ul>
+								<li>While change is there uncommitted...</li>
+								<li>git checkout -- file</li>
+								<li>git checkout [sha hash] -- file</li>
+							</ul>
+						</section>
+						<section>
+							<h2>That concludes phase 1</h2>
+							<p>Single person project, without ineternet</p>
+						</section>
+						<section>
+							<h2>Lets go online</h2>
+							<p>Your repo has a series of commits</p>
+							<p>A "remote" repository also has a series of commits</p>
+							<p>Looks just like a local repository</p>
+						</section>
+						<section>
+							<section>
+								<h2>Online services for <code>git</code> repos</h2>
+								<p>GitHub (<a href="https://github.com">https://github.com</a>)</p>
+								<p>GitLab (<a href="https://gitlab.com">https://gitlab.com</a>)</p>
+								<p>BitBucket (<a href="https://bitbucket.com">https://bitbucket.com</a>)</p>
+							</section>
+							<section>
+								<h2>Signup for GitLab</h2>
+							</section>
+							<section>
+								<h2>Create a new "Project"</h2>
+							</section>
+							<section>
+								<h2>Empty repo</h2>
+								<p>They've effectively done the following on their server:</p>
+								<pre><code>git init</code></pre>
+							</section>
+						</section>
+						<section>
+							<section>
+								<h2>Connecting your repo to GitLab's</h2>
+								<p>We use a <code>git</code> concept called a "remote"</p>
+								<p class="smaller">Remotes tell <code>git</code> where to look for commits other than your local repo</p>
+								<pre><code>git remote add origin https://gitlab.com/pserwylo/learning-git.git</code></pre>
+							</section>
+							<section>
+								<h2>Connecting your repo to GitLab's</h2>
+								<p>Verify you told git about the gitlab remote:</p>
+								<pre><code>git remote</code></pre>
+								<pre><code>origin</code></pre>
+								<p>Add the <code>-v</code> (for "verbose") option for more detail:</p>
+								<pre><code>git remote -v</code></pre>
+								<pre><code data-trim>
+origin	https://gitlab.com/pserwylo/learning-git.git (fetch)
+origin	https://gitlab.com/pserwylo/learning-git.git (push)
+								</code></pre>
+							</section>
+						</section>
+						<section>
+							<section>
+								<h2>Pushing commits to the remote</h2>
+								<p>What is in the remote initially?</p>
+								<img src="git-freshly-made-github-repo.svg" />
+							</section>
+							<section>
+								<h2>Pushing commits to the remote</h2>
+								<p>Ensure that all your local commits exist in the remote repo</p>
+								<pre><code data-trim>git push origin master</code></pre>
+								<pre><code data-trim>
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 545 bytes | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+To git@gitlab.com:pserwylo/learning-git.git
+ * [new branch]      master -&gt; master
+</code></pre>
+							</section>
+							<section>
+								<h2>After pushing</h2>
+								<img src="github-repo-after-first-push.svg" />
+							</section>
+						</section>
+						<section>
+							<h2></h2>
+						</section>
+				</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+				Reveal.initialize({
+					slideNumber: true,
+					history: true,
+					dependencies: [
+						{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					],
+				});
+		</script>
+</body>
+</html>

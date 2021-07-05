@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Simple Use Case</title>
+	<link rel="stylesheet" type="text/css" href="pres.css"/>
+</head>
+
+<body>
+
+<p class="nav">
+<a href="03_what_is_aop.html">Previous</a>
+::
+<a href="05_complex_use_case.html">Next</a>
+</p>
+
+<h1>Simple Use Case</h1>
+
+<p>
+For this example, imagine you had this desire to write your own unit tests.
+Now, lets say you want to have the ability to intergrate test functions in
+the same class as the actual functions themselves. To do this, we need to
+somehow mark the functions as a test function. Of course, with our new found
+love of attributes, we find that it is suprisingly easy to simply add a single
+attribute to the funtion to declare it as a test function:
+</p>
+
+<pre>
+/** @TestFunction */
+public function testValidation() { ... }
+
+@TestFunction
+public function testValidation() { ... }
+
+[TestFunction]
+public function testValidation() { ... }
+</pre>
+
+<p>
+Once the <code>TestFunction</code> has been defined, your test code can interrogate
+the attributes of each function in a class, and only run the functions wich have
+that attribute present. The way that you interrgate for attributes depends on the 
+language and environment being used, but the general concept is the same everywhere.
+</p>
+
+</body>
+
+</head>

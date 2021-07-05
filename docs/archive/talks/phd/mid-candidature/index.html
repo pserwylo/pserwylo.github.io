@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<!-- Based on http://code.google.com/p/html5slides/source/browse/trunk/template/index.html -->
+
+<html>
+	<head>
+		<title>Intelligently generating scenarios for mass gathering medical care</title>
+		<meta charset='utf-8'>
+		<!--<script src='slides.js'></script>-->
+		<script src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+	</head>
+
+    <style media="print">
+         @page {
+            size: A4 landscape;
+             @top-right {
+                content: "Page " counter(page);
+             }
+         }
+          article {
+            page-break-after: always;
+            margin: auto;
+          }
+          article.next, article.past {
+            display: block;    
+          }
+          body {
+              display: block !important;
+              font-family: 'Open Sans', Arial, sans-serif;
+              font-size: 1.5em;
+          }
+      </style>
+      <script type="text/javascript">
+        window.addEventListener('load', function(){
+            var link = document.getElementsByTagName('link');
+            link[link.length-1].setAttribute ("media","screen");
+        });
+</script>
+	<style>
+		.wrapper li {
+			line-height: 1.2;
+			margin-bottom: 0.8em;
+		}
+	
+		.h3 { margin-bottom: 30px; }
+		.good { color: green; text-decoration: underline; font-weight: bold; }
+		.bad { color: red; text-decoration: underline; }
+		.smaller { font-size: 0.8em; }
+		.italic { font-style: italic; }
+		.faded { color: gray; }
+		p.indent { padding-left: 2em; }	
+	</style>
+
+	<body style='display: none'>
+
+		<section class='slides layout-regular template-serwylo'>
+
+			<article class='biglogo'>
+				<h1>
+					Eliciting Bayesian network structure from experts
+				</h1>
+				<p>
+					PhD Mid-candidature Review
+					<br />
+					August 10, 2012
+					<br />
+					<span class="smaller">Student: Peter Serwylo</span>
+					<br />
+					<span class="smaller">Supervisors: Grace Rumantir and Frada Burstein</span>
+				</p>
+			</article>
+
+			<article>
+				<h1>
+					Some background
+					<br />
+					<span class="smaller">on the thesis...</span>
+				</h1>
+			</article>
+
+			<article>
+				<h1>
+					The problem
+				</h1>
+			</article>
+
+			<article>
+				<h2>
+					<span class="smaller">Each mass gathering requires a</span>
+					<br />
+					Risk assessment
+				</h2>
+			</article>
+
+			<article>
+				<h2>
+					Generate patient scenarios
+					<br />
+					<span class="smaller">Where each scenario is 
+						<br />
+					an attendee requiring first aid</span>
+				</h2>
+			</article>
+
+			<article>
+				<h3>Simple <span class="smaller">(roulette wheel)</span> scenario generation</h3>
+				<br />
+				<br />
+				<br />
+				<img class="centered" src="images/roulette-wheel.png"/>
+			</article>
+
+			<article>
+				<h3>Better scenario generation...</h3>
+				<div>
+					<br />
+					<p class="smaller">Instead of:</p>
+					<p class="indent">Pr( Asthma )</p>
+				</div>
+				<div class="build">
+					<div>
+						<br />
+						<p class="smaller">Condition on the characteristics of the event:</p>
+						<p class="indent">Pr( Asthma | Seated, Indoors, Alcohol, etc... )</p>
+					</div>
+					<div>
+						<br />
+						<p class="smaller">And ignore those things which don't matter:</p>
+						<p class="indent">Pr( Asthma | Indoors )</p>
+					</div>
+				</div>
+			</article>
+
+			<article>
+				<h2>
+					<span class="smaller">As it happens...</span>
+					<br />
+					Bayesian Networks 
+					<br />
+					are pretty good for this
+				</h2>
+			</article>
+
+			<article>
+				<br />
+				<br />
+				<br />
+				<br />
+				<img src="images/yed/example-bn.png" class="centered" />
+			</article>
+
+			<article>
+				<h3>Constructing a Bayesian Network</h3>
+				<p class="smaller">Using data and algorithms:</p>
+				<p class="indent">Analyse the data sets for relationships.</p>
+
+				<div class="build">	
+					<div>
+						<br />
+						<p class="smaller">Using experts and their knowledge:</p>
+						<p class="indent">Elicit knowledge from experts about relationships.</p>
+					</div>
+				</div>
+			</article>
+
+			<article>
+				<h2>
+					<span class="smaller smaller">This part of the project presents</span>
+					<br />
+					A technique for expert elicitation
+					<br />
+					of Bayesian Networks
+				</h2>
+			</article>
+
+			<article>
+				<h2>
+					This technique 
+					<span class="smaller italic faded">is to</span> 
+					existing techniques
+					<br />
+					<span class="smaller">as</span>
+					<br />
+					Surveys 
+					<span class="smaller italic faded">are to</span> 
+					interviews
+				</h2>
+			</article>
+
+			<article>
+				<h3>The analogy <span class="smaller">(in sweeping generalisations)</span></h3>
+				<br />
+				<div>	
+					<div class="wrapper smaller">
+						<div style="margin-left: -10px; float: left; width: 48%; border-right: solid 1px #ddd;">
+							<ul>
+								<li>Surveys are <span class="bad">rigid</span></li>
+								<li>Surveys require <span class="bad">more</span> questions</li>
+							</ul>
+						</div>
+						<div style="margin-left: 48%;">
+							<ul>
+								<li>Interviews are <span class="good">flexible</span></li>
+								<li>Interviews require <span class="good">less</span> questions</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="build">
+					<div style="clear: both;">
+						<br />
+						<br />
+						<div class="wrapper smaller box">
+							<div style="margin-left: -10px; float: left; width: 48%; border-right: solid 1px #ddd;">
+								<ul>
+									<li>Surveys require <span class="good">less</span> coordination</li>
+									<li>Surveys require <span class="good">less commitment</span> from the participant</li>
+									<li>Surveys <span class="good">don't</span> require transcribing <br /><span class="smaller">(if done online)</span></li>
+								</ul>
+							</div>
+							<div style="margin-left: 48%;">
+								<ul>
+									<li>Interviews require <span class="bad">more</span> coordination</li>
+									<li>Interviews require <span class="bad">more commitment</span> from the participant</li>
+									<li>Interviews require <span class="bad">transcribing</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div style="clear: both;">
+						<br />
+						<br />
+						<div class="wrapper">
+							<div style="margin-left: -10px; float: left; width: 48%; border-right: solid 1px #ddd;">
+								<ul>
+									<li>Surveys reach<br /> <span class="good">more</span> people</li>
+								</ul>
+							</div>
+							<div style="margin-left: 48%;">
+								<ul>
+									<li>Interviews reach<br /> <span class="bad">less</span> people</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<article>
+				<h2>
+					<span class="smaller">How can the</span>
+					<br />
+					Survey analogy be used to 
+					<br />
+					elicit Bayesian Networks?
+				</h2>
+			</article>
+
+			<article>
+				<h3>
+					<span class="smaller">Consider this way of conceptualising a Bayesian Network:</span>
+					<br />
+					A (sparse) matrix of relationships
+				</h3>
+				<br />
+				<div class="wrapper smaller">
+					<div style="float: left; width: 48%;">
+						<br />
+						<br />
+						<img class="centered" src="images/yed/example-bn.png" />
+					</div>
+					<div style="margin-left: 48%;">
+						<img class="centered" src="images/mockups/matrix-sparse.png" />
+					</div>
+				</div>
+			</article>
+
+			<article>
+				<h3>Should we ask the expert to fill in this matrix?</h3>
+				<br />
+				<br />
+				<br />
+				<img class="centered" src="images/mockups/matrix-sparse.png" />
+			</article>
+
+			<article>
+				<h2>
+					<span class="smaller">We can</span>
+					<br />
+					Constrain the possibilities
+				</h2>
+			</article>
+
+			<article>
+				<h3>Variables cannot influence themselves...</h3>
+				<br /><br />
+				<img class="centered" src="images/mockups/matrix-constrained.png" />
+			</article>
+
+			<article>
+				<h3>...and injuries cannot influence event characteristics...</h3>
+				<br /><br />
+				<img class="centered" src="images/mockups/matrix-constrained-2.png" />
+			</article>
+
+			<article>
+				<h3>...and we assume each patient only has one injury...</h3>
+				<br /><br />
+				<img class="centered" src="images/mockups/matrix-constrained-3.png" />
+			</article>
+
+			<article>
+				<h3>...and we usually know the event characteristics...</h3>
+				<br /><br />
+				<img class="centered" src="images/mockups/matrix-constrained-4.png" />
+			</article>
+
+			<article>	
+				<h3>All of a sudden it is not so sparse</h3>
+				<br />
+				<br />
+				<br />
+				<div class="wrapper smaller">
+					<div style="float: left; width: 48%;">
+						<img class="centered" src="images/mockups/matrix-sparse.png"  style="width: 97%"/>
+					</div>
+					<div style="margin-left: 48%;">
+						<img class="centered" src="images/mockups/matrix-constrained-fully.png" style="width: 90%" />
+					</div>
+				</div>
+			</article>
+	
+			<article>
+				<h3>
+					Specifying the presence of relationships via the matrix
+					<br />
+					doesn't allow experts to:
+				</h3>
+				<ul>
+					<li>Specify their confidence in the existence of the relationship</li>
+					<li>Justify the relationship to others</li>
+					<li>Review other experts opinions about the relationship</li>
+					<li>Add new variables which were not originally specified</li>
+				</ul>
+			</article>
+
+			<article>
+				<h3>
+					<span class="smaller">So we replace the matrix with</span>
+					<br />
+					More understandable questions</h3>
+				<br />
+				<br />
+				<img src="images/mockups/parent-elicitation.png" class="centered" />
+			</article>
+
+			<article>
+				<h2>Delphi-fying</h2>
+				<p style="position: absolute; bottom: 80px;">
+					<span class="italic">verb</span><br />A word I just made up for this talk...
+				</p>
+			</article>
+
+			<article>
+				<h3>When is a Delphi round complete?</h3>
+				<br />
+				<p>All participants have finished.</p>
+				<p class="smaller">or when</p>
+				<p>A certain time has elapsed.</p>
+			</article>
+
+			<article>
+				<h2>
+					<span class="smaller">After each round,</span>
+					<br />
+					Remove unused variables
+					<br />
+					<span class="smaller">and</span>
+					<br />
+					Provide feedback,
+					<br />
+					<span class="smaller">then do it again</span>
+				</h2>
+			</article>
+
+			<article>
+				<h3>
+					Removing variables which nobody selected
+				</h3>
+				<br />
+				<br />
+				<div class="wrapper smaller">
+					<div style="float: left; width: 48%;">
+						<img src="images/mockups/parent-elicitation-removing.png" class="centered" />
+					</div>
+					<div style="margin-left: 48%;">
+						<img src="images/mockups/parent-elicitation-removed.png" class="centered" />
+					</div>
+				</div>
+			</article>
+			
+			<article>
+				<h3>
+					<span class="smaller">Provide feedback by</span>
+					<br />
+					Identifying the odd ones out
+				</h3>
+				<br />
+				<img src="images/mockups/parent-elicitation-warning.png" class="centered" />
+				<br />
+				<p>Provide them with results from other participants.</p>
+				<p>Ask them to <span class="italic">clarify</span> or <span class="italic">correct</span> their stance.</p>
+			</article>
+
+			<article>
+				<h3>When is the <span class="italic">whole thing</span> complete?</h3>
+				<br />
+				<p>The parents of each variable cease to change.</p>
+				<p class="smaller">or when</p>
+				<p>A certain number of rounds has completed.</p>
+			</article>
+
+			<article>
+				<h1>The study participants</h1>
+			</article>
+
+			<article>
+				<h2>
+					<span class="smaller">Enlisting people with</span>
+					<br />
+					Experience in 
+					<br />
+					Mass gathering medical care
+				</h2>
+			</article>
+
+			<article>
+				<h1>Current status of PhD</h1>
+			</article>
+
+			<article>
+				<h2>
+					Implementation
+					<br />
+					<span class="smaller">is approaching completion.</span>
+				</h2>
+			</article>
+
+			<article>
+				<h2>
+					Ethics
+					<br />
+					<span class="smaller">is pending approval.</span>
+				</h2>
+			</article>
+
+			<article>
+				<h2>
+					Recruiting
+					<br />
+					<span class="smaller">will start after ethics.</span>
+				</h2>
+			</article>
+
+			<article>
+				<h2>
+					Thesis
+					<br />
+					<span class="smaller">is up to 35,000 words.</span>
+				</h2>
+			</article>
+
+			<article>
+				<h2>
+					Two more publications
+					<br />
+					<span class="smaller">are planned.</span>
+				</h2>
+			</article>
+
+			<article>
+				<h2>
+					Thanks for listening
+					<br />
+					<span class="smaller">Any questions?</span>
+				</h2>
+			</article>
+	
+		</section>
+
+	</body>
+</html>
+

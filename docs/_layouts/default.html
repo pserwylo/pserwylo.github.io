@@ -5,25 +5,10 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
- <!-- Global site tag (gtag.js) - Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EP7KLCYVP"></script>
- <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag() { dataLayer.push(arguments); }
-   gtag('js', new Date());
-
-   gtag('config', 'G-3EP7KLCYVP');
- </script>
-
-
-
-
 <body>
   <main>
     {% include anchor_headings.html html=content anchorBody="#" %}
   </main>
-
-  
 
   <script>
     function setTheme(theme) {
@@ -57,17 +42,15 @@ layout: compress
     }
   </script>
 
-
-
 </body>
 
 <footer class="social-footer">
   <div class="social-footer-icons">
-    <a href="https://github.com/P0WEX" title="Github profile, nothing much there, yet" target="_blank"
+    <a href="https://github.com/pserwylo" title="Github profile" target="_blank"
       rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
     <a href="{{site.url}}/atom.xml" title="Feed RSS" target="_blank" rel="noopener noreferrer"><i
         class="fa fa-rss" aria-hidden="true"></i></a>
-    <a href="https://github.com/P0WEX/Gesko" title="Browse the code" target="_blank" rel="noopener noreferrer"><i
+    <a href="https://github.com/pserwylo/pserwylo.github.io" title="Browse the code" target="_blank" rel="noopener noreferrer"><i
         class="fa fa-code" aria-hidden="true"></i></a>
   </div>
 </footer>
@@ -86,6 +69,7 @@ layout: compress
       fuzzy: true,
     })
   </script>
+  <script src="{{ site.baseurl }}/assets/wp-redirect.js"></script>
   {% endif %}
 
 
