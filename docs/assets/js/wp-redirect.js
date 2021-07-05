@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 //
 // Adapted from https://github.com/danvk/danvk.github.io/commit/f99fa0d6ef808a2ba468587d3f7eab800d448f1e
 //
@@ -8,11 +12,12 @@
 
 var redirects = {
   '?p=191': '/2013/08/12/make-your-writing-beautiful',
+  '?p=115': '/2012/01/16/linux-conf-2012-finding-vulnerabilities-in-php-code'
 };
 
 (function() {
   var s = document.location.search;
   if (s in redirects) {
-    window.location.replace(redirects[s]);
+    window.location.replace('{{ site.base_url }}' + redirects[s]);
   }
 })();

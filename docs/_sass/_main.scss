@@ -207,6 +207,19 @@ img {
 	max-width: 100%;
 }
 
+img.border {
+    box-shadow: 0 2px 5px #bbb;
+    border: solid 1px #ddd;
+}
+
+.legacy-warning {
+    box-shadow: 0 2px 5px #844;
+    border: solid 1px #fbb;
+    background: #fdd;
+    padding: 1rem;
+    color: #500;
+}
+
 hr {
 	background: var(--light-text-color);
 	height: 1px;
