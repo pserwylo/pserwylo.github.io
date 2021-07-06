@@ -27,6 +27,6 @@ You can [get the code from GitHub](https://github.com/pserwylo/Priijector) (GPLv
 
 ## Slides used in Presentation
 
-Please [click the image below](/archive/talks/osdc/2011/pres.pdf) to download the PDF of the presentation (3mb). The quality is a little poor, because I had to take screenshots of each slide from within the Dolphin emulator at a resolution of 640×480.
+Please [click the image below]({{ site.base_url }}/archive/talks/osdc/2011/pres.pdf) to download the PDF of the presentation (3mb). The quality is a little poor, because I had to take screenshots of each slide from within the Dolphin emulator at a resolution of 640×480.
 
-[<img class="border" src="/assets/images/osdc-2011-thumb.png" alt="Screenshot from slide deck showing icons of various exploits" width="533" height="352">](/archive/talks/osdc/2011/pres.pdf)
+[<img class="border" src="{{ site.base_url }}/assets/images/osdc-2011-thumb.png" alt="Screenshot from slide deck showing icons of various exploits">]({{ site.base_url }}/archive/talks/osdc/2011/pres.pdf)

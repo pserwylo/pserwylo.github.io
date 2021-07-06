@@ -26,4 +26,4 @@ I’d like to thank my supervisors [Grace Rumantir](https://web.archive.org/web/
 ## Slides used in Presentation
 Please [click the image below]({{ site.base_url }}/archive/talks/phd/confirmation/talk.svg) to view the presentation in your browser (~2.5mb, doesn’t seem to work in Internet Explorer).
 
-[<img class="border" src="{{ site.base_url }}/assets/images/phd-confirmation-thumb.png" alt="Screenshot from slides showing a flowchart of a potential model to simulate scenarios" width="568" height="444">]({{ site.base_url }}/archive/talks/phd/confirmation/talk.svg)
+[<img class="border" src="{{ site.base_url }}/assets/images/phd-confirmation-thumb.png" alt="Screenshot from slides showing a flowchart of a potential model to simulate scenarios">]({{ site.base_url }}/archive/talks/phd/confirmation/talk.svg)
