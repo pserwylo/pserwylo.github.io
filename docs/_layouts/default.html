@@ -59,15 +59,20 @@ layout: compress
 {% if page.url == '/' %}
   <script src="{{ site.baseurl }}/assets/js/simple-jekyll-search.js"></script>
   <script>
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '{{ site.baseurl }}/search.json',
-      searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-      noResultsText: 'No results found..',
-      limit: 10,
-      fuzzy: true,
-    })
+      var input = document.getElementById('search-input');
+      var sjs = SimpleJekyllSearch({
+        searchInput: input,
+        resultsContainer: document.getElementById('search-results'),
+        json: '{{ site.baseurl }}/search.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found..',
+        limit: 10,
+        fuzzy: true,
+      });
+     
+      input.addEventListener('input', function (e) {
+        document.getElementById('post-list').style.display = input.value.length > 0 ? 'none' : 'block';
+      });
   </script>
   <script src="{{ site.baseurl }}/assets/js/wp-redirect.js"></script>
   {% endif %}

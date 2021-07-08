@@ -428,7 +428,7 @@ figcaption {
 }
 
 .bio {
-	margin-bottom: 5rem;
+	margin-bottom: 1rem;
 }
 
 ::selection {
@@ -436,8 +436,11 @@ background-color: #fffba0;
 color: #333;
 }
 
+.search-wrapper {
+  margin-top: 1rem;
+}
 
-.search-article {
+.search {
   position: relative;
  
 
