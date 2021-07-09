@@ -14,6 +14,8 @@ html {
 
 .app-list {
     display: flex;
+    padding: 4px;
+    overflow-x: scroll;
 
     .app-item {
 
@@ -348,10 +350,20 @@ header ul {
 }
 
 .posts li {
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 0.5rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .posts li {
+        align-items: start;
+        flex-direction: column;
+        a {
+            max-width: 100%;
+        }
+    }
 }
 
 .posts li a,
@@ -368,6 +380,13 @@ header ul {
 	padding-left: 1rem;
 	white-space: nowrap;
 	font-variant-numeric: tabular-nums;
+}
+@media screen and (max-width: 768px) {
+    .posts li time {
+        padding-left: 0;
+        line-height: 0.8;
+        padding-bottom: 0.5rem;
+    }
 }
 
 time {
