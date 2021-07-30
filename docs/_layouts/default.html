@@ -51,6 +51,26 @@
       }
     }
   </script>
+
+  <!--
+  This is a self hosted Matomo instance, to ensure that statistics are not shared with any 3rd party.
+  I use it to keep track of what type of blog posts people find most interesting, so that I can continue to write more interesting posts.
+  If this is of concern, I try hard to make sure that this website works perfectly fine without JavaScript enabled, in which case this will not send any stats.
+  -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//stats.serwylo.com/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+
 </body>
 
 
