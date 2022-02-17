@@ -1,13 +1,19 @@
 ---
 layout: post
-title: A comprehensive set of tips for generating PDFs in the browser
+title: Comprehensive tips for generating PDFs in the browser
 description: 
 summary: 
 tags: software-dev javascript cognizant
-minute: 1
+minute: 15
 ---
 
-2022-01-13
+Recently, as an associate at [Cognizant Australia](https://www.cognizant.com/au/en), I have found myself diving much deeper into the world of "Print to PDF" than I ever thought neccesary. This is a summary of my learnings in the hope it may help others.
+
+## WARNING: Work In Progress
+
+This post is a work in progress. There are still sections left to complete, screenshots to add, proof reading to be done.
+
+However, it may be some time before I am able to complete it, and I hope someone can find the information here useful in the meantime.
 
 ## Summary
 
