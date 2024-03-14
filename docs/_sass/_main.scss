@@ -13,16 +13,23 @@ html {
 }
 
 .app-list {
-    display: flex;
+    display: grid;
     padding: 4px;
-    overflow-x: scroll;
+	gap: 1em;
+	grid-template-columns: auto auto auto auto;
+
+	@media screen and (max-width: 47rem) {
+		grid-template-columns: auto auto auto;
+	}
+
+	@media screen and (max-width: 30rem) {
+		grid-template-columns: auto auto;
+	}
 
     .app-item {
 
         box-shadow: 0 1px 4px #888;
         padding: 1rem;
-        margin: 0 0.5rem;
-        flex: 1;
         line-height: 1.1;
         border-radius: 2px;
 
@@ -196,7 +203,7 @@ a {
 	text-decoration: none;
 }
 
-.post p {
+.bio p, .post p {
 	margin: 1rem 0;
 }
 
