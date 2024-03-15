@@ -3,7 +3,7 @@ layout: post
 title: Make your writing beautiful
 description: A presentation to other PhD students at the Monash University Faculty of IT
 summary: 
-tags: talks phd
+tags: talk phd
 minute: 1
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "LCA 2018: F-Droid: The private, secure, free and open app store for Android"
 description: 
 summary: 
-tags: talk linux.conf.au
+tags: talk lca
 minute: 2
 ---
 
